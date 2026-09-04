@@ -1,8 +1,8 @@
 (function(){
   const CONFIG = {
-    OWNER_GITHUB_USERNAME: 'sudo-sentiq', 
-    REPO_OWNER: 'sudo-sentiq',            
-    REPO_NAME: 'floriankannkeinleague',                 
+    OWNER_GITHUB_USERNAME: 'sudo-Sentiq', 
+    REPO_OWNER: 'sudo-Sentiq',            
+    REPO_NAME: 'Floriankannkeinleague',                 
     BRANCH: 'main',                            
     DATA_PATH: 'data/clips.json'
   };
