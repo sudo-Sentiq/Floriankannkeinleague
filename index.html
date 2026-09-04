@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debrief — clip showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <h1>Debrief<span>.</span></h1>
+      <p>Clips from the repo, with your own notes on what happened.</p>
+    </div>
+    <div class="owner-slot">
+      <span class="owner-badge" id="ownerBadge" style="display:none;">Owner mode</span>
+      <button class="btn" id="ownerToggleBtn">Owner sign in</button>
+    </div>
+  </header>
+
+  <!-- LOGIN -->
+  <div class="panel" id="loginPanel" style="display:none;">
+    <h2>Sign in with GitHub</h2>
+    <p class="hint">Paste a personal access token scoped to this repo (Contents: Read and write). GitHub verifies the token itself — this page only checks that the token belongs to the configured owner account. The token is kept in memory for this tab only; it is never saved anywhere.</p>
+    <div class="filerow">
+      <input type="password" id="tokenInput" placeholder="github_pat_...">
+      <button class="btn primary" id="tokenSubmitBtn">Sign in</button>
+    </div>
+    <div class="error-box" id="loginError" style="display:none;"></div>
+  </div>
+
+  <!-- OWNER: add clip -->
+  <div id="ownerArea" style="display:none;">
+    <div class="panel">
+      <h2>Add a clip from GitHub</h2>
+      <p class="hint">Paste a link to a video file committed in this repo (or any repo) — a <code>github.com/.../blob/...</code> link or a <code>raw.githubusercontent.com</code> link both work. Raw links work most reliably for grabbing screenshots.</p>
+      <div class="filerow">
+        <input type="url" id="githubUrl" placeholder="https://github.com/you/repo/blob/main/clips/fight.mp4">
+        <button class="btn" id="loadGhBtn">Load</button>
+      </div>
+      <div class="video-shell" id="videoShell"><div class="video-empty" id="videoEmpty">No clip loaded yet</div></div>
+      <div class="capture-row" id="captureRow" style="display:none;">
+        <button class="btn primary" id="captureBtn">Grab this frame</button>
+        <span class="capture-note" id="timeLabel"></span>
+      </div>
+      <p class="hint" style="margin-bottom:6px;">First frame grabbed becomes the showcase thumbnail. Extra ones show alongside your review.</p>
+      <div class="filmstrip" id="filmstrip"></div>
+      <div class="error-box" id="loadError" style="display:none;"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Your review</h2>
+      <div class="field">
+        <label class="field-label" for="titleInput">Title</label>
+        <input type="text" id="titleInput" placeholder="e.g. Baron steal gone wrong">
+      </div>
+      <div class="field">
+        <label class="field-label" for="champInput">Champion / role</label>
+        <input type="text" id="champInput" placeholder="e.g. Jinx, ADC">
+      </div>
+      <div class="field">
+        <label class="field-label" for="reviewInput">What went wrong (and right)</label>
+        <textarea id="reviewInput" style="min-height:160px;" placeholder="Write it up however you'd say it out loud — e.g. He was full HP with flash up and still pushed up alone into a Yasuo/Malphite combo at 14:30. Should've backed the second the wave crashed under turret..."></textarea>
+      </div>
+      <button class="btn primary" id="publishBtn" style="width:100%;justify-content:center;padding:12px;" disabled>Publish clip</button>
+      <div class="error-box" id="publishError" style="display:none;"></div>
+      <p class="footnote">Publishing commits <code>data/clips.json</code> straight to this repo through GitHub's API using your token. Anyone without write access to the repo simply can't do this, regardless of what happens in the browser.</p>
+    </div>
+
+    <div class="panel" id="managePanel" style="display:none;">
+      <h2>Published clips</h2>
+      <p class="hint">Visible to everyone. Remove anything from here.</p>
+      <div class="manage-list" id="manageList"></div>
+    </div>
+  </div>
+
+  <!-- PUBLIC: showcase -->
+  <div class="panel">
+    <h2>Showcase</h2>
+    <p class="hint">Everything published so far. No login needed to browse.</p>
+    <div id="galleryHost"><div class="loading"><div class="spinner"></div>Loading clips…</div></div>
+  </div>
+
+</div>
+
+<div id="modalHost"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
