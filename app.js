@@ -1,13 +1,9 @@
 (function(){
-  // ============================================================
-  // CONFIG — fill these in with your own details before deploying.
-  // None of this is secret; it's just which repo/account owns the site.
-  // ============================================================
   const CONFIG = {
-    OWNER_GITHUB_USERNAME: 'your-github-username',  // TODO: the only account allowed to publish
-    REPO_OWNER: 'your-github-username',              // TODO: usually the same as above
-    REPO_NAME: 'your-repo-name',                      // TODO
-    BRANCH: 'main',                                    // TODO: change if your default branch differs
+    OWNER_GITHUB_USERNAME: 'sudo-sentiq', 
+    REPO_OWNER: 'sudo-sentiq',            
+    REPO_NAME: 'floriankannkeinleague',                 
+    BRANCH: 'main',                            
     DATA_PATH: 'data/clips.json'
   };
 
