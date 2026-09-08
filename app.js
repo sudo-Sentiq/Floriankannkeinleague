@@ -6,7 +6,8 @@
     REPO_NAME: 'Floriankannkeinleague',
     BRANCH: 'main',                                  
     DATA_PATH: 'data/clips.json',
-    SUBMISSION_LABEL: 'submission'
+    SUBMISSION_LABEL: 'submission',
+    FORMSPREE_ENDPOINT: 'https://formspree.io/f/xeaqpjjq'
   };
 
   const RAW_DATA_URL = 'https://raw.githubusercontent.com/' + CONFIG.REPO_OWNER + '/' + CONFIG.REPO_NAME + '/' + CONFIG.BRANCH + '/' + CONFIG.DATA_PATH;
