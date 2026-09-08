@@ -2,7 +2,8 @@
   const CONFIG = {
     OWNER_GITHUB_USERNAME: 'sudo-Sentiq', 
     REPO_OWNER: 'sudo-Sentiq',            
-    REPO_NAME: 'Floriankannkeinleague',                 
+    REPO_NAME: 'Floriankannkeinleague',
+    FORMSPREE_ENDPOINT: 'https://formspree.io/f/xeaqpjjq',
     BRANCH: 'main',                            
     DATA_PATH: 'data/clips.json'
   };
