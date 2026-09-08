@@ -1,15 +1,12 @@
 (function(){
-  // ============================================================
-  // CONFIG — fill these in with your own details before deploying.
-  // None of this is secret; it's just which repo/account owns the site.
-  // ============================================================
+
   const CONFIG = {
-    OWNER_GITHUB_USERNAME: 'your-github-username',  // TODO: the only account allowed to publish
-    REPO_OWNER: 'your-github-username',              // TODO: usually the same as above
-    REPO_NAME: 'your-repo-name',                      // TODO
-    BRANCH: 'main',                                    // TODO: change if your default branch differs
-    DATA_PATH: 'data/clips.json',
-    FORMSPREE_ENDPOINT: 'https://formspree.io/f/your-form-id'  // TODO: see README
+    OWNER_GITHUB_USERNAME: 'sudo-Sentiq', 
+    REPO_OWNER: 'sudo-Sentiq',            
+    REPO_NAME: 'Floriankannkeinleague',
+    FORMSPREE_ENDPOINT: 'https://formspree.io/f/xeaqpjjq',
+    BRANCH: 'main',                                    
+    DATA_PATH: 'data/clips.json'
   };
 
   const RAW_DATA_URL = 'https://raw.githubusercontent.com/' + CONFIG.REPO_OWNER + '/' + CONFIG.REPO_NAME + '/' + CONFIG.BRANCH + '/' + CONFIG.DATA_PATH;
