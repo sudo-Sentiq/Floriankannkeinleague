@@ -4,10 +4,10 @@
   // None of this is secret; it's just which repo/account owns the site.
   // ============================================================
   const CONFIG = {
-    OWNER_GITHUB_USERNAME: 'your-github-username',  // TODO: the only account allowed to publish
-    REPO_OWNER: 'your-github-username',              // TODO: usually the same as above
-    REPO_NAME: 'your-repo-name',                      // TODO
-    BRANCH: 'main',                                    // TODO: change if your default branch differs
+    OWNER_GITHUB_USERNAME: 'sudo-Sentiq', 
+    REPO_OWNER: 'sudo-Sentiq',            
+    REPO_NAME: 'Floriankannkeinleague',
+    BRANCH: 'main',                                    
     DATA_PATH: 'data/clips.json',
     SUBMISSION_LABEL: 'submission'
   };
